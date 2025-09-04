@@ -1,10 +1,14 @@
 import Image from "next/image";
-import { HeroSection } from "./components/HeroSection";
+import { HeroSection } from "../components/HeroSection";
+import { EventCard } from "../components/EventCard";
+import { FAQAccordion } from "../components/FAQAccordion";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:gap-8 sm:p-20">
-     <HeroSection/>
+    <div className="font-sans flex flex-col min-h-screen">
+      <HeroSection />
+      <EventCard />
+      <FAQAccordion/>
     </div>
   );
 }

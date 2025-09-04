@@ -10,6 +10,8 @@ module.exports = {
             colors: {
                 // Add the custom primary color from the reference site
                 ampprimary: '#00B96B',
+                'mint': '#06b86b',
+                ps:"#e63457"
             },
         },
     },
