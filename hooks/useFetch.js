@@ -1,34 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , useCallback} from "react";
 // Your Supabase client
 
-export const useFetch = ({ fetchFunction, autoFetch = true }) => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+export const useFetch = (config) => {
+  const [state, setState] = useState({
+    data: null,
+    error: null,
+    loading: false
+  });
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
+    setState(prev => ({ ...prev, loading: true, error: null }));
     try {
-      setLoading(true);
-      setError(null);
-      const response = await fetchFunction();
-      setData(response);
+      const result = await config.fetchFunction();
+      setState({ data: result, error: null, loading: false });
+      return result;
     } catch (error) {
-      console.error("Supabase error:", error);
-      setError(error);
-    } finally {
-      setLoading(false);
+      setState({ data: null, error, loading: false });
+      throw error;
     }
-  };
+  }, [config.fetchFunction]);
 
-  useEffect(() => {
-    if (autoFetch) fetchData();
+  const reset = useCallback(() => {
+    setState({ data: null, error: null, loading: false });
   }, []);
 
-  const resetFunction = () => {
-    setData(null);
-    setError(null);
-    setLoading(false);
-  };
+  useEffect(() => {
+    if (config.autoFetch) {
+      fetchData();
+    }
+  }, [config.autoFetch, fetchData]);
 
-  return { loading, data, error, reFetch: fetchData, resetFunction };
+  return {
+    ...state,
+    reFetch: fetchData,
+    resetFunction: reset
+  };
 };

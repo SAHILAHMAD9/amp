@@ -1,15 +1,11 @@
 "use client"
 import { useAuth } from '@/contexts/AuthContext';
 import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { Router } from 'next/router';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { AuthModal } from './auth/AuthModal';
 
 const Header = () => {
     const [showAuthModal, setShowAuthModal] = useState(false);
-    const router = useRouter();
     const { user, signOut } = useAuth();
     return (
         <header className="header flex justify-around items-center h-[75px]">
@@ -19,7 +15,7 @@ const Header = () => {
             <div className='flex justify-between gap-2'>
                 <p className='text-primary-foreground text-md font-semibold md:text-base px-4 py-1 md:px-5 rounded-full !no-underline transition-all duration-200 hover:opacity-90 bg-gradient-to-r from-emerald-500 to-emerald-700'>Get Insted Job alerts</p>
                 {user ? 
-                <Button onClick={() => signOut()} text={"SignOut"}></Button> :
+                <button className='text-lg font-bold p-1 rounded-md bg-emerald-500' onClick={() => signOut()}>SignOut</button> :
                     <button
                         onClick={() => setShowAuthModal((prev) => !prev)}
                         className="bg-black rounded-full w-9 h-9 flex items-center justify-center"
@@ -30,7 +26,7 @@ const Header = () => {
                             height="24"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="white"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"

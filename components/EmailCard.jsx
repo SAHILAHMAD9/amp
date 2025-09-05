@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "./ui/Button";
 
 export const EmailCard = () => {
     return (
@@ -10,7 +9,7 @@ export const EmailCard = () => {
             </div>
             <form className="flex gap-2">
                 <input type="email" placeholder="Subcribe" className="caret-emerald-600 focus:outline-emerald-500  h-10 grow border-1 text-emerald-600 p-2 rounded-md border-emerald-600 "/>
-                <Button text={"Subscribe"}/>
+                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white" type="submit">Subscribe</button>
             </form>
         </div>
     )
