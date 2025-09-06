@@ -1,5 +1,4 @@
 import { useEffect, useState , useCallback} from "react";
-// Your Supabase client
 
 export const useFetch = (config) => {
   const [state, setState] = useState({

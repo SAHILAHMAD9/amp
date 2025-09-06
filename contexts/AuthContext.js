@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Function to get the current session
     const getSession = useCallback(async () => {
         try {
             const { data: { session }, error } = await supabase.auth.getSession();
@@ -22,7 +21,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Function to get the current user
     const getUser = useCallback(async () => {
         try {
             const { data: { user }, error } = await supabase.auth.getUser();
@@ -34,7 +32,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Initialize auth state
     const initializeAuth = useCallback(async () => {
         try {
             setLoading(true);
@@ -54,7 +51,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, [getSession, getUser]);
 
-    // Sign up function
     const signUp = useCallback(async (email, password, metadata = {}) => {
         try {
             const { data, error } = await supabase.auth.signUp({
@@ -79,7 +75,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Sign in function
     const signIn = useCallback(async (email, password) => {
         try {
             const { data, error } = await supabase.auth.signInWithPassword({
@@ -99,7 +94,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Sign out function
     const signOut = useCallback(async () => {
         try {
             const { error } = await supabase.auth.signOut();
@@ -115,7 +109,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Reset password function
     const resetPassword = useCallback(async (email) => {
         try {
             const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -131,7 +124,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Update password function
     const updatePassword = useCallback(async (newPassword) => {
         try {
             const { error } = await supabase.auth.updateUser({
@@ -147,7 +139,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Update user metadata
     const updateUser = useCallback(async (updates) => {
         try {
             const { data, error } = await supabase.auth.updateUser(updates);
@@ -163,11 +154,9 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    // Effect to initialize auth on mount
     useEffect(() => {
         initializeAuth();
 
-        // Listen for auth changes
         const {
             data: { subscription },
         } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -190,7 +179,6 @@ export const AuthProvider = ({ children }) => {
         return () => subscription.unsubscribe();
     }, [initializeAuth, getUser]);
 
-    // Memoized context value to prevent unnecessary re-renders
     const contextValue = useMemo(() => ({
         user,
         session,
