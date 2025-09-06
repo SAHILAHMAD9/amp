@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useCallback, useState, useEffect, useMemo } from 'react';
-import { supabase } from '@/lib/supabase'; // Your Supabase client
+import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 
 const AuthContext = createContext(undefined);
