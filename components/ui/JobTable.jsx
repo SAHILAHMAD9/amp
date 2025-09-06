@@ -1,53 +1,49 @@
 "use client"
-import React, { useEffect, useState , useMemo} from 'react'
+import React, { useEffect, useState , useMemo, useCallback} from 'react'
 import { TableHeader } from './TableHeader'
-import { supabase } from '@/lib/supabase'
 
-export const JobTable = () => {
+export const JobTable = ({jobs}) => {
   const [activeJobType, setActiveJobType] = useState('full-time'); 
   const [activeCompanyType, setActiveCompanyType] = useState('all');
-  const [jobs, setJobs] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data: jobs, error } = await supabase
-          .from('jobs')
-          .select('*')
-        setJobs(jobs);
-        // console.log(jobs, error);
-      } catch (err) {
-        console.log(err);
-
-      }
-    }
-    fetchData();
-  }, [])
+  // const fetchData = useCallback(async () => {
+  //   try {
+  //     const { data, errors } = await supabase
+  //     .from('jobs')
+  //       .select('*')
+  //     return data;
+  //     // console.log(jobs, error);
+  //   } catch (errors) {
+  //     console.log(errors);
+      
+  //   }
+  // },[])
+  // const {data:jobs,error,loading,reFetch} = useFetch({ fetchFunction: fetchData ,autoFetch: true})
 
   const filteredJobs = useMemo(() => {
     if (!jobs) return [];
     return jobs.filter((job) => {
-      console.log(job);
+      // console.log(job);
       const matchingJobType = job.job_type === activeJobType;
-      // const matchingCompanyType = job.company_type === activeCompanyType;
-
-      return matchingJobType;
+      const matchingCompanyType = job.company_type === activeCompanyType;
+      // console.log(activeCompanyType);
+      return activeCompanyType === "all" ? matchingJobType : matchingCompanyType && matchingJobType 
     })
   }, [jobs, activeCompanyType, activeJobType]);
 
   useEffect(() => {
-  console.log(filteredJobs);
+  // console.log(filteredJobs);
   
 },[filteredJobs])
   return (
-      <div>
+      <div className='space-12'>
       <TableHeader />
 
-      <button onClick={() => setActiveJobType("full-time")}>full time</button>
-      <button onClick={() => setActiveJobType("internship")}>Internship</button>
-      {filteredJobs.map((item) => {
-        return (<p key={item.id}>{item.company}</p>)
-      })}
+      <button onClick={() => setActiveJobType("full-time")}>full time  </button>
+      <button onClick={() => setActiveJobType("internship")}>Internship  </button>
+      <button onClick={() => setActiveCompanyType("all")}>all  </button>
+      <button onClick={() => setActiveCompanyType("tech")}>tech  </button>
+      <button onClick={() => setActiveCompanyType("non-tech")}>non-tech  </button>
+      
       </div>
   )
 }
