@@ -1,13 +1,21 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { ArrowRight, TrendingUp, Users, Award, ChevronDown } from "lucide-react";
-import { handleScrollToDiv , universities} from "@/lib/helper";
+import { handleScrollToDiv } from "@/lib/utils";
 
 const stats = [
     { number: "500+", label: "Job Opportunities", icon: TrendingUp },
     { number: "50+", label: "Partner Companies", icon: Users },
     { number: "95%", label: "Success Rate", icon: Award }
 ];
+const universities = [
+    "Stanford",
+    "JMI",
+    "Harvard",
+    "Berkeley",
+    "Carnegie Mellon"
+];
+
 
 export const HeroSection = () => {
     const [st, setSt] = useState({
@@ -89,7 +97,7 @@ export const HeroSection = () => {
                     <div className={`transition-all duration-1000 delay-300 ${st.isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                         <div className="relative">
                             {/* Main stats card */}
-                            <div className="bg-white/10 backdrop-blur-lg border border-emerald-400/20 rounded-2xl p-8 shadow-2xl">
+                            <div className="bg-white/10 backdrop-blur-md border border-emerald-400/20 rounded-2xl p-8 shadow-2xl">
                                 <h3 className="text-2xl font-bold text-emerald-50 mb-8 text-center">Platform Impact</h3>
 
                                 {/* Rotating stats */}
