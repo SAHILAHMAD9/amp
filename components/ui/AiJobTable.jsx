@@ -46,7 +46,7 @@ export const AiJobTable = ({ jobs }) => {
 
 
   return (
-    <div className='p-4 gap-4 flex flex-col items-around justify-center space-12'>
+    <div id="job-table-section" className='p-4 scroll-mt-20 gap-4 flex flex-col items-around justify-center space-12'>
       <AiFilterHeader activeFilters={filters} onChange={handleFilterChange} config={filterConfig}/>
       <div className='overflow-x-auto scroll-m-1'>
       <TableHeader />

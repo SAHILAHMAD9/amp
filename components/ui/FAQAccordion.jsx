@@ -1,7 +1,5 @@
 "use client"
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
-
 const faqs = [
     {
         question: "What is APM Season?",
@@ -75,7 +73,7 @@ export const FAQAccordion =() => {
         };
 
     return (
-        <div className="py-16 px-2 text-wrap bg-slate-50">
+        <div id="faq-section" className="py-16 scroll-mt-1 px-2 text-wrap bg-slate-50">
             <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-white rounded-md shadow-md ">
                 {faqs.map((faq, index) => (
