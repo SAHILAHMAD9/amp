@@ -75,13 +75,13 @@ export const FAQAccordion =() => {
         };
 
     return (
-        <div className="py-16 bg-slate-50">
+        <div className="py-16 px-2 text-wrap bg-slate-50">
             <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-white rounded-md shadow-md ">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
-                        className="px-6 border-b last:border-b-0 border-gray-200"
+                        className="md:px-6 px-2 border-b last:border-b-0 border-gray-200"
                     >
                         <button
                             onClick={() => clickedHandler(index)}

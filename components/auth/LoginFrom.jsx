@@ -15,7 +15,7 @@ export const LoginForm = ({ onToggleMode, onSuccess }) => {
             const result = await signIn(email, password);
             if (result.error) throw result.error;
             onSuccess?.();
-        toast.success("LOgin Succesfull");
+        toast.success("Login Succesfull!");
             return result.data;
         }
     const {

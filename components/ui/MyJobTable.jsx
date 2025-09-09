@@ -1,8 +1,10 @@
 "use client"
 import React, { useEffect, useState , useMemo, useCallback} from 'react'
 import { TableHeader } from './TableHeader'
+import { MyFilterHeader } from './MyFilterHeader';
+import { JobCard } from './JobCard';
 
-export const JobTable = ({jobs}) => {
+export const MyJobTable = ({jobs}) => {
   const [activeJobType, setActiveJobType] = useState('full-time'); 
   const [activeCompanyType, setActiveCompanyType] = useState('all');
   // const fetchData = useCallback(async () => {
@@ -29,21 +31,14 @@ export const JobTable = ({jobs}) => {
       return activeCompanyType === "all" ? matchingJobType : matchingCompanyType && matchingJobType 
     })
   }, [jobs, activeCompanyType, activeJobType]);
-
-  useEffect(() => {
-  // console.log(filteredJobs);
   
-},[filteredJobs])
   return (
-      <div className='space-12'>
+    <div className='w-[1080px] m-9  overflow-auto space-12'>
       <TableHeader />
-
-      <button onClick={() => setActiveJobType("full-time")}>full time  </button>
-      <button onClick={() => setActiveJobType("internship")}>Internship  </button>
-      <button onClick={() => setActiveCompanyType("all")}>all  </button>
-      <button onClick={() => setActiveCompanyType("tech")}>tech  </button>
-      <button onClick={() => setActiveCompanyType("non-tech")}>non-tech  </button>
-      
+      <MyFilterHeader setActiveCompanyType={setActiveCompanyType} setActiveJobType={setActiveJobType}/>
+      {filteredJobs.map((item) => (
+        <JobCard job={item} key={item.id}/>
+       ))}
       </div>
   )
 }
