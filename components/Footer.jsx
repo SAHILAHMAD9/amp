@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className="text-black px-10 py-12 bg-emerald-100/90">
         <div
-            className="max-w-screen-xl mx-auto px-universal-x sm:px-universal-x-sm lg:px-universal-x-lg 
+            className="max-w-screen-lg mx-auto px-universal-x sm:px-universal-x-sm lg:px-universal-x-lg 
          grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-6 md:gap-y-8 
          text-sm justify-items-left sm:justify-items-center text-left">
             <div className="w-fit flex flex-col items-center sm:items-start mt-0">

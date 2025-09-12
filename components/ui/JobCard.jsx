@@ -53,8 +53,9 @@ export const JobCard = ({ job }) => {
                     <p className="mt-1"><span className='font-bold'>About the company -</span> {data.data.reviewsSummary}</p>
                     <p className="mt-1"><span className='font-bold'>Carrer Path -</span> {data.data.careerPath}</p>
                     <p className="mt-1"><span className='font-bold'>Salary Range -</span> {data.data.salaryExpectation}</p>
-                    <div className='p-1 mt-2 text-center text-sm bg-yellow-100 text-red-500 border rounded-md border-yellow-400'>
-                        <p className="">This is an Ai Generated Response ,Ai can make mistakes.</p>
+                    <div className='p-1 mt-2 inline-flex  items-center justify-center text-sm bg-yellow-100 text-red-500 border rounded-md border-yellow-400'>
+                        <span className="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></span>
+                        This is an Ai Generated Response ,Ai can make mistakes.
                     </div>
                 </div>)}
         </div>
