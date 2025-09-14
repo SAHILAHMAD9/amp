@@ -90,9 +90,9 @@ const SignInModal = ({
                     </DialogTitle>
                     <button
                         onClick={onClose}
-                        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-all hover:opacity-100 hover:scale-110"
+                        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-all hover:opacity-100 hover:scale-110 hover:rotate-90"
                     >
-                        <X className="h-4 w-4" />
+                        <X className="h-4 w-4 " />
                     </button>
                 </DialogHeader>
 

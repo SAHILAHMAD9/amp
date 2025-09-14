@@ -2,18 +2,25 @@
 import React from "react";
 import Link from 'next/link';
 import { handleScrollToDiv } from "@/lib/utils";
+import Image from "next/image";
 
 export const Footer = () => {
     return (
-        <footer className="text-black px-auto py-12 bg-emerald-100/90">
+        <footer className="text-black px-10 py-12 bg-emerald-100/90">
             <div
-                className="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
-                           gap-x-4 gap-y-8 text-sm justify-items-start"
+                className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
+                           gap-x-4 gap-y-8 text-sm justify-items-start lg:justify-items-end"
             >
                 <div className="w-fit flex flex-col items-start col-span-1 md:col-span-1">
-                    <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-black mb-1">
-                        APM CONNECT
-                    </h1>
+                    <div className="text-2xl flex items-center md:text-3xl font-bold tracking-tight text-black mb-1">
+                    <Image
+                        src="/logo.png"
+                        alt="App Logo"
+                        width={100}
+                        height={60}
+                    />
+                        APM 
+                    </div>
                     <p className="text-sm font-normal text-black/70 mb-4">
                         Your central hub for the latest 2025-2026 Associate Product Manager roles,
                         internships, and rotational programs from top-tier companies.

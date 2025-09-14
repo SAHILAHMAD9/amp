@@ -1,12 +1,11 @@
 "use client";
-
 import { useAuth } from '@/contexts/AuthContext';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import SignInModal from './models/SignInModal';
 import SignUpModal from './models/SignUpModal'; 
 import { LogOut } from 'lucide-react';
+import Image from 'next/image';
 
 const Header = () => {
     const { user, signOut } = useAuth();
@@ -30,9 +29,15 @@ const Header = () => {
 
     return (
         <>
-            <header className="header w-full sticky top-0 backdrop-blur-xl shadow-xl z-50 flex justify-between items-center h-[75px] lg:px-50 px-10 transition-all duration-300">
-                <Link href={'/'} className="hover:scale-105 transition-transform duration-200">
-                    <h1 className='font-bold text-2xl text-emerald-700 hover:text-emerald-600 transition-colors'>
+            <header className="header w-full sticky top-0 backdrop-blur-xl shadow-2xl z-50 flex justify-between items-center h-[75px] lg:px-50 px-10 transition-all duration-300">
+                <Link href={'/'} className="hover:scale-105 flex items-center transition-transform duration-200">
+                    <Image
+                        src="/logo.png"
+                        alt="App Logo"
+                        width={100}
+                        height={60}
+                    />
+                    <h1 className='font-bold text-2xl hidden md:block text-emerald-700 hover:text-emerald-600 transition-colors'>
                         APM Career
                     </h1>
                 </Link>
@@ -50,7 +55,8 @@ const Header = () => {
                     ) : (
                             <button
                                 onClick={openSignIn}
-                                className="bg-black rounded-full w-9 h-9 flex items-center justify-center"
+                                className="bg-black rounded-full w-9 h-9 flex items-center justify-center 
+               transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +68,7 @@ const Header = () => {
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    className="h-4 w-4"
+                                    className="h-4 w-4 transition-colors"
                                 >
                                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                                     <circle cx="12" cy="7" r="4" />

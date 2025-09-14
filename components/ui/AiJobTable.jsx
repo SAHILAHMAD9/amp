@@ -47,7 +47,7 @@ export const AiJobTable = ({ jobs }) => {
 
   return (
     <div id="job-table-section" className='p-4 scroll-mt-20 gap-4 flex flex-col items-center justify-center space-12'>
-      <div className='flex flex-col max-w-screen-lg gap-2'>
+      <div className='flex flex-col max-w-screen-xl gap-2'>
         <AiFilterHeader activeFilters={filters} onChange={handleFilterChange} config={filterConfig} />
         <TableHeader />
         {filtersJobs.map((item) => (
