@@ -59,7 +59,7 @@ export const JobCard = ({ job }) => {
                         <h1 className='font-medium text-base'>{job.role}</h1>
                     </div>
 
-                    <div className='col-span-full md:col-span-1 mt-2 md:mt-0 flex justify-start md:justify-center items-center'>
+                    <div className='hidden md:col-span-1 mt-2 md:mt-0 md:flex md:justify-center md:items-center'>
                         {job.visa_sponsor === 'yes' && (<Check className='text-green-700 w-5 h-5' />)}
                         {job.visa_sponsor === 'no' && (<X className='text-red-500 w-5 h-5' />)}
                         {job.visa_sponsor === 'unsure' && (<span className="text-gray-500 text-lg font-bold">?</span>)}
@@ -72,8 +72,8 @@ export const JobCard = ({ job }) => {
                     <h4 className="font-bold">AI Summary:</h4>
                     <p className="mt-1">{aiResponse.data.summary}</p>
                     {aiResponse.data.reviewsSummary && <p className="mt-2"><span className='font-bold'>Company Culture:</span> {aiResponse.data.reviewsSummary}</p>}
-                    {aiResponse.data.careerPath && <p className="mt-2"><span className='font-bold'>Career Path:</span> {aiResponse.data.careerPath}</p>}
-                    {aiResponse.data.salaryExpectation && <p className="mt-2"><span className='font-bold'>Salary Range:</span> {aiResponse.data.salaryExpectation}</p>}
+                    {aiResponse.data.careerPath && <p className="mt-2"><span className='font-bold'>Qualifications & Requirments:</span> {aiResponse.data.careerPath}</p>}
+                    {aiResponse.data.salaryExpectation && <p className="mt-2"><span className='font-bold'>Salary & Compensation:</span> {aiResponse.data.salaryExpectation}</p>}
 
                     <div className='p-1 mt-3 inline-flex items-center justify-center text-xs bg-yellow-100 text-red-500 border rounded-md border-yellow-400'>
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></span>

@@ -5,7 +5,7 @@ import { handleScrollToDiv } from "@/lib/utils";
 
 export const Footer = () => {
     return (
-        <footer className="text-black px-10 py-12 bg-emerald-100/90">
+        <footer className="text-black px-auto py-12 bg-emerald-100/90">
             <div
                 className="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
                            gap-x-4 gap-y-8 text-sm justify-items-start"
