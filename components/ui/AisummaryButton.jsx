@@ -25,9 +25,9 @@ export const AiSummaryButton = ({ job, setData }) => {
             <TooltipTrigger asChild>
                 <button onClick={reFetch} className="p-1 rounded-full hover:bg-emerald-100 transition-colors">
                     {loading ? (
-                        <LoaderCircle className="w-5 h-5 text-emerald-600 animate-spin" />
+                        <LoaderCircle className="w-3 h-3 md:w-5 md:h-5 text-emerald-600 animate-spin" />
                     ) : (
-                        <Sparkle className='w-5 h-5 text-emerald-600' />
+                        <Sparkle className='w-3 h-3 md:w-5 md:h-5 text-emerald-600' />
                     )}
                 </button>
             </TooltipTrigger>

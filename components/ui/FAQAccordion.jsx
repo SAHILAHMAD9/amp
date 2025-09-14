@@ -2,64 +2,64 @@
 import React, { useState } from "react";
 const faqs = [
     {
-        question: "What is APM Season?",
+        question: "What is the purpose of this career platform?",
         answer:
-            "APM Season is the leading platform for discovering associate product manager jobs, internships, and programs at top companies. We hand-curate opportunities for students and recent grads from the best employers in the world, so you never miss a chance to apply for competitive roles in product management.",
+            "This platform is a dedicated resource for individuals seeking associate product manager roles, internships, and structured programs at leading companies. We meticulously gather and present opportunities tailored for students and recent graduates from top-tier employers globally, ensuring you have access to competitive product management positions.",
     },
     {
-        question: "How can I stay up to date with APM opportunities?",
+        question: "How can I receive updates on new APM opportunities?",
         answer:
-            "Sign up for personalized email alerts to receive notifications about the latest APM programs, internships, and product manager jobs that match your interests. You can select our APM Season Premium Plan to get immediate reminders or our free plan to get weekly reminders.",
+            "To stay informed about the latest APM programs, internships, and product manager job openings that match your career interests, you can sign up for personalized email notifications. Our premium option provides instant alerts, while the free plan offers weekly summaries.",
     },
     {
-        question: "Why is it important to stay updated with APM programs and internships?",
+        question: "Why is timely access to APM programs and internships critical?",
         answer:
-            "Most competitive APM programs are only open for 3–14 days before closing and there can be thousands of applicants. Missing the window can mean waiting an entire year or missing a company altogether.",
+            "Many highly sought-after APM programs have brief application windows, often closing within 3 to 14 days, and attract thousands of applicants. Missing these limited periods can mean a year-long wait or completely missing an opportunity with a specific company.",
     },
     {
-        question: "What is the difference between an APM and a PM?",
+        question: "What distinguishes an Associate Product Manager from a Product Manager?",
         answer:
-            "An Associate Product Manager (APM) is typically a more structured (often rotational) entry-level role designed for recent graduates or early-career professionals. Product Managers (PMs) are more experienced and own product strategy, roadmap, and execution.",
+            "An Associate Product Manager (APM) role is typically a structured, often rotational, entry-level position designed for new graduates or those early in their careers. A Product Manager (PM) usually has more experience and is responsible for product strategy, roadmap development, and execution.",
     },
     {
-        question: "What is the typical recruiting timeline for APM roles?",
+        question: "What is the typical hiring timeline for APM positions?",
         answer:
-            "Timelines vary by company. Many big tech APM programs open applications between August and October, while startups may recruit in the spring.",
+            "Hiring schedules vary by organization. Many major technology companies open their APM applications between August and October, whereas startups may conduct their recruiting drives in the spring months.",
     },
     {
-        question: "How do I get an Associate Product Manager job with no experience?",
+        question: "How can someone secure an Associate Product Manager role without prior experience?",
         answer:
-            "Many APM programs are designed for new grads and don’t require prior full-time PM experience. To improve your chances: gain transferable skills through internships, learn PM fundamentals, and prepare for APM interviews with mock practice.",
+            "Many APM programs are specifically structured for new graduates and do not require previous full-time PM experience. To enhance your candidacy: develop transferable skills through internships, master core product management principles, and rigorously prepare for APM interviews with practice sessions.",
     },
     {
-        question: "Which companies offer Associate Product Manager programs?",
+        question: "Which organizations offer Associate Product Manager programs?",
         answer:
-            "Top APM programs are offered by companies such as Google, Meta, Microsoft, Uber, LinkedIn, Salesforce, Intuit, DoorDash, and Instacart. These programs often recruit once per year and have limited cohort sizes.",
+            "Prominent APM programs are available at companies such as Google, Meta, Microsoft, Uber, LinkedIn, Salesforce, Intuit, DoorDash, and Instacart. These programs typically recruit annually and admit a limited number of candidates.",
     },
     {
-        question: "What skills do APM programs look for?",
+        question: "What core competencies are sought in APM programs?",
         answer:
-            "Recruiters look for problem-solving, analytical, and communication skills, plus a user-focused mindset. Familiarity with product design, engineering foundations, SQL, or Figma is a plus.",
+            "Recruiters actively seek candidates demonstrating strong problem-solving, analytical thinking, and communication abilities, alongside a genuine user-centric approach. Any familiarity with product design, engineering fundamentals, SQL, or Figma is considered a valuable asset.",
     },
     {
-        question: "What is the average salary for an Associate Product Manager?",
+        question: "What is the estimated average salary for an Associate Product Manager?",
         answer:
-            "In the U.S., APM salaries range from $100,000 to $220,000+ (base + bonuses + stock), making them some of the best-paying opportunities for new graduates.",
+            "In the United States, annual salaries for APM roles generally range from $100,000 to over $220,000 (encompassing base salary, bonuses, and stock options), positioning them among the most lucrative entry-level opportunities for recent graduates.",
     },
     {
-        question: "Are there remote Associate Product Manager jobs?",
+        question: "Are remote Associate Product Manager positions available?",
         answer:
-            "Yes. Remote APM roles are becoming more common, especially at startups and fully distributed companies. However, in-person roles can sometimes provide stronger early-career learning.",
+            "Yes, remote APM opportunities are becoming increasingly common, particularly within startups and fully distributed companies. However, in-person roles can sometimes offer more robust learning and mentorship experiences during early career stages.",
     },
     {
-        question: "How competitive are APM programs?",
+        question: "How competitive are Associate Product Manager programs?",
         answer:
-            "Extremely competitive—top programs receive thousands of applications for fewer than 50 spots. Strong academics, internships, leadership experience, and polished applications are critical.",
+            "They are exceedingly competitive—top-tier programs often receive thousands of applications for fewer than 50 available spots. Exceptional academic records, relevant internships, leadership involvement, and meticulously crafted applications are essential for success.",
     },
     {
-        question: "How should I prepare for an APM interview?",
+        question: "What is the best way to prepare for an APM interview?",
         answer:
-            "Preparation should cover product sense, analytical problem solving, behavioral questions, and case studies. Mock interviews and practicing frameworks can help you stand out.",
+            "Thorough preparation should encompass product sense, analytical problem-solving, behavioral questions, and case study analyses. Engaging in mock interviews and practicing established frameworks can significantly help you distinguish yourself.",
     },
 ];
 

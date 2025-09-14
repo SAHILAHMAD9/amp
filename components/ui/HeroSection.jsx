@@ -108,7 +108,7 @@ export const HeroSection = () => {
                                         return (
                                             <div
                                                 key={index}
-                                                className={`flex items-center justify-between p-4 rounded-xl transition-all duration-500 ${isActive ? 'bg-emerald-400/20 scale-105' : 'bg-emerald-500/10'
+                                                className={`flex items-center overflow-hidden justify-between p-4 rounded-xl transition-all duration-500 ${isActive ? 'bg-emerald-400/20 scale-105' : 'bg-emerald-500/10'
                                                     }`}
                                             >
                                                 <div className="flex items-center">

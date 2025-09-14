@@ -10,9 +10,9 @@ const Header = () => {
     const [showAuthModal, setShowAuthModal] = useState(false);
     const { user, signOut } = useAuth();
     return (
-        <header className="header backdrop-blur-md shadow-xl sticky top-0 z-50 flex justify-around items-center h-[75px]">
+        <header className="header backdrop-blur-md shadow-xl top-0 z-50 flex justify-around items-center h-[75px]">
             <Link href={'/'} >
-            <h1 className='font-bold text-end text-2xl'>APM Season <span className="text-emerald-500">//</span></h1>
+            <h1 className='font-bold text-end text-2xl'>APM Season </h1>
             </Link>
 
             <div className='flex justify-between gap-2 px-2'>

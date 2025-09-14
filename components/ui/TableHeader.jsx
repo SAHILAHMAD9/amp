@@ -24,7 +24,7 @@ const headerConfig = [
 
 export const TableHeader = () => {
   return (
-    <div className='w-[1080px] sm:w-full grid-cols-8 bg-gray-100 rounded-md border-gray-200 gap-4 px-2 border-b-2 h-12 items-center text-left  font-semibold grid'>
+    <div className=' hidden top-10  grid-cols-8 bg-gray-100 rounded-md border-gray-200 gap-4 px-2 border-b-2 h-12 items-center text-left  font-semibold md:grid'>
       {headerConfig.map((item,index) => (
         <h1 className={item.classname} key={index}>{item.text}</h1>
          ))}
