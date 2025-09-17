@@ -86,7 +86,7 @@ const SignInModal = ({
             <DialogContent className="sm:max-w-md animate-in fade-in-0 zoom-in-95 duration-300">
                 <DialogHeader>
                     <DialogTitle className="text-center text-emerald-600 text-xl font-semibold">
-                        Welcome Back Bro
+                        Welcome 
                     </DialogTitle>
                     <button
                         onClick={onClose}
